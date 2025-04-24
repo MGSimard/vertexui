@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+}
+:root[data-theme="light"] {
+}
+:root[data-theme="dark"] {
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+body {
+  font-size: 1.6rem;
+}
+#app {
+}
