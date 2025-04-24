@@ -1,28 +1,40 @@
 {
-  "include": ["**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "target": "ES2022",
+    /* Base Options */
+    "allowJs": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "moduleDetection": "force",
+    "resolveJsonModule": true,
+    "target": "ESNext",
     "types": ["vite/client"],
 
-    /* Bundler mode */
-    "moduleResolution": "bundler",
+    /* Bundling */
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "incremental": true,
+    "moduleResolution": "bundler",
     "noEmit": true,
+    "verbatimModuleSyntax": true,
 
     /* Linting */
+    "checkJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noUncheckedSideEffectImports": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
+
+    /* Path Aliases*/
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
-  }
+  },
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs", "**/*.mjs", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "dist"]
 }
