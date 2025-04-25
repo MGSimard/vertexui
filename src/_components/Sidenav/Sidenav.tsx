@@ -20,15 +20,19 @@ export function Sidenav() {
 
 // Sidenav Header
 function SidenavHeader() {
-  return <div id="sidenav-header">Sidenav Header</div>;
+  return (
+    <div id="sidenav-header">
+      <img src="" alt="O" />
+      VertexUI
+    </div>
+  );
 }
 
 // Sidenav Content, Items (Links, Link Groups)
 function SidenavContent() {
   return (
     <ul id="sidenav-content">
-      Sidenav Content
-      <SidenavItem item={{ label: "Sidenav Item", href: "#" }} />
+      <SidenavItem item={{ label: "Home", href: "/" }} />
       <SidenavItem item={{ label: "Sidenav Item", href: "#" }} />
       <SidenavItem item={{ label: "Sidenav Item", href: "#" }} />
       <SidenavItemGroup

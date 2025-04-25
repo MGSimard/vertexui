@@ -6,7 +6,8 @@
   flex-direction: column;
   width: var(--sideNavWidth);
   height: 100dvh;
-  border-right: 1px solid cyan;
+  border-right: 1px solid var(--clrBorder);
+  background-color: var(--clrBgLight);
   overflow: hidden;
   --sideNavPadding: 1rem;
 }
@@ -17,7 +18,11 @@
 }
 
 #sidenav-header {
-  border-bottom: 1px solid cyan;
+  display: flex;
+  border-bottom: 1px solid var(--clrBorder);
+  > img {
+    flex-shrink: 0;
+  }
 }
 
 #sidenav-content {
@@ -30,11 +35,23 @@
   display: block;
   width: 100%;
   padding: 0.5rem var(--sideNavPadding);
-  border: 1px solid red;
+  outline: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  &:hover,
+  &:focus-visible {
+    background-color: var(--clrPrimary);
+  }
+  &.active {
+    color: var(--clrBg);
+    background-color: var(--clrPrimary);
+  }
 }
 .sidenav-itemgroup > button {
   text-align: left;
   background: none;
+  border: none;
   &:not(:disabled) {
     cursor: pointer;
   }
@@ -50,7 +67,7 @@
     min-height: 0;
     padding-left: var(--sideNavPadding);
     > li {
-      border-left: 1px solid cyan;
+      border-left: 1px solid var(--clrBorder);
     }
   }
   &[inert] {
@@ -61,5 +78,5 @@
 
 #sidenav-footer {
   margin-top: auto;
-  border-top: 1px solid cyan;
+  border-top: 1px solid var(--clrBorder);
 }

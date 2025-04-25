@@ -6,15 +6,44 @@
 :root {
   --siteMaxWidth: "";
   --sitePadding: 1rem;
-
   --sideNavWidth: 30rem;
+
+  /* Fallback Dark */
+  --clrPrimary: hsl(0, 95%, 62%);
+  --clrBg: hsl(240, 11%, 7%);
+  --clrBgLight: hsl(240, 11%, 10%);
+  --clrHeading: hsl(0, 0%, 100%);
+  --clrText: hsl(240, 9%, 91%);
+  --clrDetail: rgb(171, 171, 171);
+  --clrScroll: hsl(240, 3%, 19%);
+  --clrBorder: hsl(240, 3%, 19%);
+  --clrHover: hsl(240, 3%, 19%);
 }
 :root[data-theme="light"] {
+  --clrPrimary: hsl(243.61, 64.52%, 29.41%);
+  --clrBg: hsl(0, 0%, 88.24%);
+  --clrBgLight: hsl(0, 0%, 76%);
+  --clrHeading: hsl(0, 0%, 0%);
+  --clrText: hsl(0, 0%, 5%);
+  --clrDetail: hsl(0, 0%, 41%);
+  --clrScroll: hsl(240, 3%, 19%);
+  --clrBorder: hsl(0, 0%, 0%);
+  --clrHover: hsl(0, 0%, 76%);
 }
 :root[data-theme="dark"] {
+  --clrPrimary: hsl(0, 95%, 62%);
+  --clrBg: hsl(195, 11%, 7%);
+  --clrBgLight: hsl(240, 11%, 10%);
+  --clrHeading: hsl(0, 0%, 100%);
+  --clrText: hsl(240, 9%, 91%);
+  --clrDetail: rgb(171, 171, 171);
+  --clrScroll: hsl(240, 3%, 19%);
+  --clrBorder: hsl(240, 3%, 19%);
+  --clrHover: hsl(240, 3%, 19%);
 }
 html {
   font-size: 62.5%;
+  background-color: var(--clrBg);
   scroll-behavior: smooth;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -24,6 +53,7 @@ html {
 }
 body {
   font-size: 1.6rem;
+  background-color: var(--clrBg);
 }
 #app {
   display: flex;
