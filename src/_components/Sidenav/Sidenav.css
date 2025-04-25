@@ -1,19 +1,16 @@
 #sidenav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: var(--sideNavWidth);
-  height: 100dvh;
   --sideNavPadding: 1rem;
-  padding: var(--sideNavPadding);
-}
-#sidenav-container {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: var(--sideNavWidth);
+  height: calc(100dvh - var(--sideNavPadding) * 2);
+  padding: var(--sideNavPadding);
   border: 1px solid var(--clrBorder);
-  border-radius: 4rem;
   overflow: hidden;
+  border-radius: 4rem;
 }
 #sidenav-header,
 #sidenav-footer {

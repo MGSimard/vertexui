@@ -8,11 +8,9 @@ import "./Sidenav.css";
 export function Sidenav() {
   return (
     <nav id="sidenav">
-      <div id="sidenav-container">
-        <SidenavHeader />
-        <SidenavContent />
-        <SidenavFooter />
-      </div>
+      <SidenavHeader />
+      <SidenavContent />
+      <SidenavFooter />
     </nav>
   );
 }
