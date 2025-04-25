@@ -83,7 +83,7 @@
     > li {
       padding-left: 1.5rem;
       border-left: 1px solid var(--clrBorder);
-      /* transition: border-color 0.2s ease; */
+      transition: border-color 0.2s ease;
       &:has(.active) {
         border-color: inherit;
       }
