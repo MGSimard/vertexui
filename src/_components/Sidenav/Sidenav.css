@@ -6,6 +6,15 @@
   flex-direction: column;
   width: var(--sideNavWidth);
   height: 100dvh;
+  border-right: 1px solid red;
+  overflow: hidden;
+}
+#sidenav-content {
+  border: 1px solid blue;
+  overflow: hidden auto;
+}
+.sidenav-item {
+  border: 1px solid green;
 }
 #sidenav-footer {
   margin-top: auto;

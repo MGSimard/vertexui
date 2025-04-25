@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 :root {
   --siteMaxWidth: "";
+  --sitePadding: 1rem;
+
   --sideNavWidth: 30rem;
 }
 :root[data-theme="light"] {
@@ -28,7 +29,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  padding-left: var(--sideNavWidth);
+  padding-right: var(--sitePadding);
+  padding-left: calc(var(--sideNavWidth) + var(--sitePadding));
 }
 header,
 footer {

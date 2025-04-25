@@ -16,7 +16,7 @@ function SidenavHeader() {
 
 function SidenavContent() {
   return (
-    <ul>
+    <ul id="sidenav-content">
       Sidenav Content
       <SidenavItem />
       <SidenavItem />
@@ -26,12 +26,12 @@ function SidenavContent() {
   );
 }
 function SidenavItem() {
-  return <li>Sidenav Item</li>;
+  return <li className="sidenav-item">Sidenav Item</li>;
 }
 function SidenavItemGroup() {
   return (
     <li>
-      Sidenav Item Group
+      <button type="button">Sidenav Item Group</button>
       <ul>
         <SidenavItem />
         <SidenavItem />
