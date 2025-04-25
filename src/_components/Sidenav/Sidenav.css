@@ -52,6 +52,7 @@
     padding: 0.5rem;
     color: var(--clrPrimary);
     background-color: hsla(from var(--clrPrimary) h s l / 0.3);
+    transition: filter 0.2s ease-in;
     filter: grayscale(1);
   }
 }
