@@ -17,9 +17,10 @@ export function Sidenav() {
     </nav>
   );
 }
+
 // Sidenav Header
 function SidenavHeader() {
-  return <div>Sidenav Header</div>;
+  return <div id="sidenav-header">Sidenav Header</div>;
 }
 
 // Sidenav Content, Items (Links, Link Groups)
@@ -33,6 +34,14 @@ function SidenavContent() {
       <SidenavItemGroup
         id="1"
         label="Group 1"
+        items={[
+          { label: "Sidenav Item", href: "#" },
+          { label: "Sidenav Item", href: "#" },
+        ]}
+      />
+      <SidenavItemGroup
+        id="2"
+        label="Group 2"
         items={[
           { label: "Sidenav Item", href: "#" },
           { label: "Sidenav Item", href: "#" },
