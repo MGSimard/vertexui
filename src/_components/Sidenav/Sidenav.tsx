@@ -59,7 +59,6 @@ function SidenavItemGroup({ id, label, items }: { id: string; label: string; ite
   return (
     <li className="sidenav-itemgroup">
       <button
-        disabled
         type="button"
         aria-expanded={isOpen}
         aria-controls={`sidenav-submenu-${id}`}
