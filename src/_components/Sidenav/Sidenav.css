@@ -1,15 +1,14 @@
 #sidenav {
-  --sideNavPadding: 2rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
   display: flex;
   flex-direction: column;
   width: var(--sideNavWidth);
-  height: calc(100dvh - var(--sideNavPadding));
-  padding: var(--sideNavPadding);
+  height: calc(100dvh - var(--sitePadding));
+  padding: var(--sitePadding);
   border: 1px solid var(--clrBorder);
-  border-radius: calc(var(--sideNavPadding) * 2);
+  border-radius: calc(var(--sitePadding) * 2);
   overflow: hidden;
 }
 #sidenav-header,
@@ -19,13 +18,14 @@
 #sidenav-header {
   display: flex;
   border-bottom: 1px solid var(--clrBorder);
-  padding-bottom: var(--sideNavPadding);
+  padding-bottom: var(--sitePadding);
   > img {
     flex-shrink: 0;
   }
 }
 
 #sidenav-content {
+  padding: var(--sitePadding) 0;
   flex-grow: 1;
   overflow: hidden auto;
 }
@@ -92,6 +92,6 @@
 
 #sidenav-footer {
   margin-top: auto;
-  padding-top: var(--sideNavPadding);
+  padding-top: var(--sitePadding);
   border-top: 1px solid var(--clrBorder);
 }

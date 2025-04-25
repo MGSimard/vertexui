@@ -5,7 +5,7 @@
 }
 :root {
   --siteMaxWidth: "";
-  --sitePadding: 1rem;
+  --sitePadding: 2rem;
   --sideNavWidth: 30rem;
 
   /* Fallback Dark */
@@ -59,8 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
-  padding-right: var(--sitePadding);
-  padding-left: calc(var(--sideNavWidth) + var(--sitePadding));
+  padding: var(--sitePadding) var(--sitePadding) var(--sitePadding) calc(var(--sideNavWidth) + var(--sitePadding) * 2);
 }
 header,
 footer {
