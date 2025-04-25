@@ -1,12 +1,13 @@
 #sidenav {
+  --offset: 1rem;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: var(--offset);
+  left: var(--offset);
   display: flex;
   flex-direction: column;
   width: var(--sideNavWidth);
-  height: calc(100dvh - var(--sitePadding));
-  padding: var(--sitePadding);
+  height: calc(100dvh - var(--offset) * 2);
+  padding: var(--boxPadding);
   border: 1px solid var(--clrBorder);
   border-radius: calc(var(--sitePadding) * 2);
   overflow: hidden;
@@ -18,14 +19,14 @@
 #sidenav-header {
   display: flex;
   border-bottom: 1px solid var(--clrBorder);
-  padding-bottom: var(--sitePadding);
+  padding-bottom: var(--boxPadding);
   > img {
     flex-shrink: 0;
   }
 }
 
 #sidenav-content {
-  padding: var(--sitePadding) 0;
+  padding: var(--boxPadding) 0;
   flex-grow: 1;
   overflow: hidden auto;
 }
@@ -94,6 +95,6 @@
 
 #sidenav-footer {
   margin-top: auto;
-  padding-top: var(--sitePadding);
+  padding-top: var(--boxPadding);
   border-top: 1px solid var(--clrBorder);
 }
