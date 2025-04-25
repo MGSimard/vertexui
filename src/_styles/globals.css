@@ -2,10 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 :root {
   --siteMaxWidth: "";
-  --sideNavWidth: "";
+  --sideNavWidth: 30rem;
 }
 :root[data-theme="light"] {
 }
@@ -24,6 +25,17 @@ body {
   font-size: 1.6rem;
 }
 #app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  padding-left: var(--sideNavWidth);
+}
+header,
+footer {
+  flex-shrink: 0;
+}
+main {
+  flex-grow: 1;
 }
 /* Normalize */
 h1,

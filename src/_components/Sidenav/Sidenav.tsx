@@ -1,6 +1,8 @@
+import "./Sidenav.css";
+
 export function Sidenav() {
   return (
-    <nav>
+    <nav id="sidenav">
       <SidenavHeader />
       <SidenavContent />
       <SidenavFooter />
@@ -40,5 +42,5 @@ function SidenavItemGroup() {
 }
 
 function SidenavFooter() {
-  return <div>Sidenav Footer</div>;
+  return <div id="sidenav-footer">Sidenav Footer</div>;
 }

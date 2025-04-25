@@ -1,0 +1,12 @@
+#sidenav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--sideNavWidth);
+  height: 100dvh;
+}
+#sidenav-footer {
+  margin-top: auto;
+}
