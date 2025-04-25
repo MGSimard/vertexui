@@ -60,6 +60,7 @@
 }
 .sidenav-itemgroup > button {
   font-family: inherit;
+  font-size: inherit;
   text-align: left;
   border: none;
   background: none;
