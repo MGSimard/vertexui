@@ -17,16 +17,26 @@
   flex-grow: 1;
   overflow: hidden auto;
 }
-.sidenav-item {
+.sidenav-item > a,
+.sidenav-itemgroup > button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid red;
 }
-.sidenav-itemgroup {
+.sidenav-itemgroup > button {
+  text-align: left;
+  background: none;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 .sidenav-itemgroup > div {
   display: grid;
   grid-template-rows: 1fr;
   overflow: hidden;
   transition: grid-template-rows 0.2s;
-  ul {
+  > ul {
     min-height: 0;
   }
   &[inert] {

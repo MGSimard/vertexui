@@ -1,5 +1,6 @@
 import "./Sidenav.css";
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 interface SidenavItemProps {
   label: string;
@@ -46,7 +47,11 @@ function SidenavContent() {
 }
 
 function SidenavItem({ item }: { item: SidenavItemProps }) {
-  return <li className="sidenav-item">{item.label}</li>;
+  return (
+    <li className="sidenav-item">
+      <Link to={item.href}>{item.label}</Link>
+    </li>
+  );
 }
 
 function SidenavItemGroup({ id, label, items }: { id: string; label: string; items: SidenavItemProps[] }) {
@@ -54,6 +59,7 @@ function SidenavItemGroup({ id, label, items }: { id: string; label: string; ite
   return (
     <li className="sidenav-itemgroup">
       <button
+        disabled
         type="button"
         aria-expanded={isOpen}
         aria-controls={`sidenav-submenu-${id}`}

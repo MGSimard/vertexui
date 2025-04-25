@@ -62,16 +62,16 @@ ol {
   list-style: none;
 }
 button {
-  text-align: center;
   color: inherit;
   /*font-family: inherit;*/
-}
-button:not(:disabled) {
-  cursor: pointer;
-}
-button:disabled {
-  filter: grayscale(1);
-  pointer-events: none;
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+  &:disabled {
+    filter: grayscale(1);
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }
 [popover] {
   color: inherit;
