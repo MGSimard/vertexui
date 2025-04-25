@@ -59,9 +59,10 @@
   filter: none;
 }
 .sidenav-itemgroup > button {
+  font-family: inherit;
   text-align: left;
-  background: none;
   border: none;
+  background: none;
   &:not(:disabled) {
     cursor: pointer;
   }

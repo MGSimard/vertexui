@@ -8,6 +8,10 @@
   --sitePadding: 2rem;
   --sideNavWidth: 30rem;
 
+  --coreFont: "Rajdhani", -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica,
+    Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+  --secondaryFont: "Orbitron", Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+
   /* Fallback Dark */
   --clrPrimary: hsl(0, 95%, 62%);
   --clrBg: hsl(240, 11%, 7%);
@@ -42,6 +46,7 @@
   --clrHover: hsl(240, 3%, 19%);
 }
 html {
+  font-family: var(--coreFont);
   font-size: 62.5%;
   background-color: var(--clrBg);
   scroll-behavior: smooth;
@@ -92,7 +97,7 @@ ol {
 }
 button {
   color: inherit;
-  /*font-family: inherit;*/
+  font-family: inherit;
   &:not(:disabled) {
     cursor: pointer;
   }
