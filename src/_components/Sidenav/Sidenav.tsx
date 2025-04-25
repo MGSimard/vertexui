@@ -30,7 +30,7 @@ function SidenavItem() {
 }
 function SidenavItemGroup() {
   return (
-    <li>
+    <li className="sidenav-itemgroup">
       <button type="button">Sidenav Item Group</button>
       <ul>
         <SidenavItem />

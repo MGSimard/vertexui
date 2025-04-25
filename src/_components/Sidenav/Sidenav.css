@@ -9,12 +9,27 @@
   border-right: 1px solid red;
   overflow: hidden;
 }
+#sidenav-header,
+#sidenav-footer {
+  flex-shrink: 0;
+}
 #sidenav-content {
+  flex-grow: 1;
   border: 1px solid blue;
   overflow: hidden auto;
 }
 .sidenav-item {
   border: 1px solid green;
+}
+.sidenav-itemgroup {
+  border: 1px solid yellow;
+}
+.sidenav-itemgroup > ul {
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.3s;
+}
+.sidenav-itemgroup > ul[inert] {
+  grid-template-rows: 0fr;
 }
 #sidenav-footer {
   margin-top: auto;
