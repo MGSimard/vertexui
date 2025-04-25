@@ -6,7 +6,7 @@
   flex-direction: column;
   width: var(--sideNavWidth);
   height: 100dvh;
-  border-right: 1px solid red;
+  border-right: 1px solid cyan;
   overflow: hidden;
   --sideNavPadding: 1rem;
 }
@@ -15,9 +15,11 @@
   flex-shrink: 0;
   padding: var(--sideNavPadding);
 }
+
 #sidenav-header {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid cyan;
 }
+
 #sidenav-content {
   padding: var(--sideNavPadding) 0;
   flex-grow: 1;
@@ -38,19 +40,26 @@
   }
 }
 .sidenav-itemgroup > div {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr;
+  opacity: 1;
   overflow: hidden;
-  transition: grid-template-rows 0.2s;
+  transition: grid-template-rows 0.2s ease, opacity 0.2s ease;
   > ul {
     min-height: 0;
+    padding-left: var(--sideNavPadding);
+    > li {
+      border-left: 1px solid cyan;
+    }
   }
   &[inert] {
     grid-template-rows: 0fr;
+    opacity: 0;
   }
 }
 
 #sidenav-footer {
   margin-top: auto;
-  border-top: 1px solid red;
+  border-top: 1px solid cyan;
 }
