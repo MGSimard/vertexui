@@ -11,13 +11,41 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as CalendarImport } from './routes/calendar'
+import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as ComponentsTesttwoImport } from './routes/components/testtwo'
+import { Route as ComponentsTestImport } from './routes/components/test'
 
 // Create/Update Routes
+
+const CalendarRoute = CalendarImport.update({
+  id: '/calendar',
+  path: '/calendar',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AboutRoute = AboutImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ComponentsTesttwoRoute = ComponentsTesttwoImport.update({
+  id: '/components/testtwo',
+  path: '/components/testtwo',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ComponentsTestRoute = ComponentsTestImport.update({
+  id: '/components/test',
+  path: '/components/test',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -32,6 +60,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutImport
+      parentRoute: typeof rootRoute
+    }
+    '/calendar': {
+      id: '/calendar'
+      path: '/calendar'
+      fullPath: '/calendar'
+      preLoaderRoute: typeof CalendarImport
+      parentRoute: typeof rootRoute
+    }
+    '/components/test': {
+      id: '/components/test'
+      path: '/components/test'
+      fullPath: '/components/test'
+      preLoaderRoute: typeof ComponentsTestImport
+      parentRoute: typeof rootRoute
+    }
+    '/components/testtwo': {
+      id: '/components/testtwo'
+      path: '/components/testtwo'
+      fullPath: '/components/testtwo'
+      preLoaderRoute: typeof ComponentsTesttwoImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +95,63 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calendar': typeof CalendarRoute
+  '/components/test': typeof ComponentsTestRoute
+  '/components/testtwo': typeof ComponentsTesttwoRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calendar': typeof CalendarRoute
+  '/components/test': typeof ComponentsTestRoute
+  '/components/testtwo': typeof ComponentsTesttwoRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/calendar': typeof CalendarRoute
+  '/components/test': typeof ComponentsTestRoute
+  '/components/testtwo': typeof ComponentsTesttwoRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/calendar'
+    | '/components/test'
+    | '/components/testtwo'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/about' | '/calendar' | '/components/test' | '/components/testtwo'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/calendar'
+    | '/components/test'
+    | '/components/testtwo'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CalendarRoute: typeof CalendarRoute
+  ComponentsTestRoute: typeof ComponentsTestRoute
+  ComponentsTesttwoRoute: typeof ComponentsTesttwoRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CalendarRoute: CalendarRoute,
+  ComponentsTestRoute: ComponentsTestRoute,
+  ComponentsTesttwoRoute: ComponentsTesttwoRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +164,27 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/about",
+        "/calendar",
+        "/components/test",
+        "/components/testtwo"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/about": {
+      "filePath": "about.tsx"
+    },
+    "/calendar": {
+      "filePath": "calendar.tsx"
+    },
+    "/components/test": {
+      "filePath": "components/test.tsx"
+    },
+    "/components/testtwo": {
+      "filePath": "components/testtwo.tsx"
     }
   }
 }
