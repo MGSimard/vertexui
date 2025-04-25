@@ -1,7 +1,9 @@
 import { SidenavItem } from "./SidenavItem";
 import { SidenavItemGroup } from "./SidenavItemGroup";
-import { IconHome } from "@/_components/Icons";
+import { IconCalendar, IconHome } from "@/_components/Icons";
 import "./Sidenav.css";
+
+// Debating if I want a link array here or just keep singulars
 
 export function Sidenav() {
   return (
@@ -28,7 +30,7 @@ function SidenavContent() {
   return (
     <ul id="sidenav-content">
       <SidenavItem item={{ label: "Home", href: "/", icon: <IconHome /> }} />
-      <SidenavItem item={{ label: "Sidenav Item", href: "#" }} />
+      <SidenavItem item={{ label: "Sidenav Item", href: "#", icon: <IconCalendar /> }} />
       <SidenavItem item={{ label: "Sidenav Item", href: "#" }} />
       <SidenavItemGroup
         id="1"
