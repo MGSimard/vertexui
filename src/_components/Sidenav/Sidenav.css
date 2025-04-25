@@ -1,32 +1,31 @@
 #sidenav {
-  --sideNavPadding: 1rem;
+  --sideNavPadding: 2rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
   display: flex;
   flex-direction: column;
   width: var(--sideNavWidth);
-  height: calc(100dvh - var(--sideNavPadding) * 2);
+  height: calc(100dvh - var(--sideNavPadding));
   padding: var(--sideNavPadding);
   border: 1px solid var(--clrBorder);
+  border-radius: calc(var(--sideNavPadding) * 2);
   overflow: hidden;
-  border-radius: 4rem;
 }
 #sidenav-header,
 #sidenav-footer {
   flex-shrink: 0;
-  padding: var(--sideNavPadding);
 }
 #sidenav-header {
   display: flex;
   border-bottom: 1px solid var(--clrBorder);
+  padding-bottom: var(--sideNavPadding);
   > img {
     flex-shrink: 0;
   }
 }
 
 #sidenav-content {
-  padding: var(--sideNavPadding) 0;
   flex-grow: 1;
   overflow: hidden auto;
 }
@@ -36,7 +35,7 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  padding: 0.5rem var(--sideNavPadding);
+  padding: 0.5rem 0;
   outline: none;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -76,8 +75,9 @@
   transition: grid-template-rows 0.2s ease, opacity 0.2s ease;
   > ul {
     min-height: 0;
-    padding-left: calc(var(--sideNavPadding) * 2.5);
+    padding-left: 1.5rem;
     > li {
+      padding-left: 1.5rem;
       border-left: 1px solid var(--clrBorder);
       &:has(.active) {
         border-color: inherit;
@@ -92,5 +92,6 @@
 
 #sidenav-footer {
   margin-top: auto;
+  padding-top: var(--sideNavPadding);
   border-top: 1px solid var(--clrBorder);
 }
