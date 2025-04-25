@@ -15,22 +15,25 @@
 }
 #sidenav-content {
   flex-grow: 1;
-  border: 1px solid blue;
   overflow: hidden auto;
 }
 .sidenav-item {
-  border: 1px solid green;
 }
 .sidenav-itemgroup {
-  border: 1px solid yellow;
 }
-.sidenav-itemgroup > ul {
+.sidenav-itemgroup > div {
+  display: grid;
   grid-template-rows: 1fr;
-  transition: grid-template-rows 0.3s;
+  overflow: hidden;
+  transition: grid-template-rows 0.2s;
+  ul {
+    min-height: 0;
+  }
+  &[inert] {
+    grid-template-rows: 0fr;
+  }
 }
-.sidenav-itemgroup > ul[inert] {
-  grid-template-rows: 0fr;
-}
+
 #sidenav-footer {
   margin-top: auto;
 }
