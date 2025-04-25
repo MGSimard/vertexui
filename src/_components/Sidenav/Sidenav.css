@@ -32,7 +32,9 @@
 }
 .sidenav-item > a,
 .sidenav-itemgroup > button {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   width: 100%;
   padding: 0.5rem var(--sideNavPadding);
   outline: none;
@@ -41,12 +43,21 @@
   overflow: hidden;
   &:hover,
   &:focus-visible {
-    background-color: var(--clrPrimary);
+    background-color: var(--clrBg);
   }
-  &.active {
-    color: var(--clrBg);
-    background-color: var(--clrPrimary);
+  > svg {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    color: var(--clrPrimary);
+    background-color: hsla(from var(--clrPrimary) h s l / 0.3);
+    filter: grayscale(1);
   }
+}
+.sidenav-item > a.active svg,
+.sidenav-itemgroup:has(.active) > button svg {
+  filter: none;
 }
 .sidenav-itemgroup > button {
   text-align: left;
@@ -65,9 +76,12 @@
   transition: grid-template-rows 0.2s ease, opacity 0.2s ease;
   > ul {
     min-height: 0;
-    padding-left: var(--sideNavPadding);
+    padding-left: calc(var(--sideNavPadding) * 2.5);
     > li {
       border-left: 1px solid var(--clrBorder);
+      &:has(.active) {
+        border-color: inherit;
+      }
     }
   }
   &[inert] {
