@@ -18,7 +18,7 @@ export function SidenavItemGroup({ id, label, items, icon }: SidenavItemGroupPro
         aria-controls={`sidenav-submenu-${id}`}
         onClick={() => setIsOpen(!isOpen)}>
         {icon}
-        {label}
+        <span>{label}</span>
       </button>
       <div id={`sidenav-submenu-${id}`} inert={!isOpen}>
         <ul>

@@ -47,5 +47,19 @@ function SidenavContent() {
 
 // Sidenav Footer
 function SidenavFooter() {
-  return <div id="sidenav-footer">Sidenav Footer</div>;
+  return (
+    <div id="sidenav-footer">
+      Sidenav Footer
+      <div id="sidenav-user">
+        <img id="sidenav-user-avatar" src="" alt="Avatar" />
+        <div id="sidenav-user-name">Guest 7702</div>
+        <div id="sidenav-user-describer">Better Auth Access Manager.</div>
+      </div>
+      <form id="sidenav-auth">
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
 }

@@ -11,7 +11,7 @@ export function SidenavItem({ item }: { item: SidenavItemPropTypes }) {
     <li className="sidenav-item">
       <Link to={item.href}>
         {item.icon}
-        {item.label}
+        <span>{item.label}</span>
       </Link>
     </li>
   );
